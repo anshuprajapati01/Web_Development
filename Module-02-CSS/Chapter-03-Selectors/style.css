@@ -1,0 +1,24 @@
+/* Universal */
+* {
+    font-family: Arial, sans-serif;
+}
+
+/* Element */
+h1 {
+    color: blue;
+}
+
+/* ID */
+#title {
+    text-align: center;
+}
+
+/* Class */
+.info {
+    color: green;
+}
+
+/* Grouping */
+h1, button {
+    background-color: lightgray;
+}
