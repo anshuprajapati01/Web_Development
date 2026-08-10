@@ -1,0 +1,17 @@
+:root {
+    --primary-color: #2563eb;
+    --text-color: #222;
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+p {
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+}
