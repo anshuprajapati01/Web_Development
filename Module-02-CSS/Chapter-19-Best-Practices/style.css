@@ -1,0 +1,210 @@
+/* =========================================
+   1. CSS Variables
+   ========================================= */
+:root {
+    --clr-primary: #4f46e5;
+    --clr-primary-dark: #4338ca;
+    --clr-dark: #1f2937;
+    --clr-light: #f3f4f6;
+    --clr-white: #ffffff;
+    --clr-text: #4b5563;
+    
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    
+    --radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* =========================================
+   2. Basic Reset & Box Model
+   ========================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--clr-text);
+    background-color: var(--clr-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   3. Animations
+   ========================================= */
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   4. Navbar (Flexbox)
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--clr-dark);
+    color: var(--clr-white);
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.navbar-links a {
+    transition: color var(--transition-speed) ease;
+}
+
+.navbar-links a:hover,
+.navbar-links a:focus {
+    color: #9ca3af;
+}
+
+/* =========================================
+   5. Hero Section
+   ========================================= */
+.hero {
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--clr-white);
+    /* Applying the animation here */
+    animation: slideDownFade 0.8s ease-out forwards;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    color: var(--clr-dark);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   6. Cards Section (CSS Grid)
+   ========================================= */
+.cards-section {
+    padding: var(--spacing-lg) var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.card-grid {
+    display: grid;
+    /* Responsive grid without media queries */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.card {
+    background-color: var(--clr-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Transitions for hover effect */
+    transition: transform var(--transition-speed) ease, 
+                box-shadow var(--transition-speed) ease;
+}
+
+/* Pseudo-classes */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: var(--clr-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* =========================================
+   7. Button Section
+   ========================================= */
+.action-section {
+    text-align: center;
+    padding: 0 var(--spacing-md) var(--spacing-lg);
+}
+
+.primary-btn {
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.primary-btn:hover,
+.primary-btn:focus {
+    background-color: var(--clr-primary-dark);
+    outline: none;
+}
+
+.primary-btn:active {
+    transform: scale(0.98);
+}
+
+/* =========================================
+   8. Footer
+   ========================================= */
+.footer {
+    background-color: var(--clr-dark);
+    color: var(--clr-white);
+    text-align: center;
+    padding: var(--spacing-md);
+    margin-top: auto; /* Pushes footer to the bottom if content is short */
+}
+
+/* =========================================
+   9. Responsive Design (Media Queries)
+   ========================================= */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+}
