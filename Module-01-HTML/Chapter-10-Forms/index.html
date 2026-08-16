@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Practice</title>
+</head>
+
+<body>
+    <h1>Student Registration Form</h1>
+    <form action="/register" method="POST">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" placeholder="Enter Your Full Name" autocomplete="name" required>
+        <br><br>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Enter Your email" autocomplete="email"
+            required><br><br>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter Your Password"
+            autocomplete="new-password" required><br><br>
+
+        <label for="age">Age</label>
+        <input id="age" name="age" type="number" placeholder="Enter your age"><br><br>
+        <label>Gender</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+        <label>Skills</label>
+        <input type="checkbox" id="html" name="skills" value="HTML">
+        <label for="html">HTML</label>
+        <input type="checkbox" id="css" name="skills" value="CSS">
+        <label for="css">CSS</label>
+        <input type="checkbox" id="js" name="skills" value="JavaScript">
+        <label for="js">JavaScript</label><br><br>
+        <label>Branch</label>
+        <select name="branch">
+            <option value="IT">Information Technology</option>
+            <option value="CS">Computer Science</option>
+            <option value="EC">Electronics</option>
+
+        </select><br><br>
+        <label for="about">About Yourself</label><br>
+        <textarea id="about" name="about" rows="5" cols="30">
+</textarea><br><br>
+        <label for="dob">Date of Birth</label>
+        <input id="dob" name="dob" type="date"><br><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+
+</html>
